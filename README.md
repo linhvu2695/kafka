@@ -15,7 +15,7 @@ environment:
 HOST_IP=$(ipconfig getifaddr en0) && docker-compose up -d
 ```
 
-## Use Kafka
+## Use Kafka with Nodejs
 - `node topic.js` to spin up a topic named "Users"
 - `node producer.js <username>` to produce/push message to the topic (with proper partitioning). 
 ```
@@ -28,3 +28,6 @@ const partition = msg[0] < "N" ? 0 : 1;
 // consumer.js
 const consumer = kafka.consumer({"groupId": "test"});
 ```
+
+## Use Kafka with Python
+- All the above steps are applicable with python scripts, using `topic.py`, `producer.py`, `consumer.py`
