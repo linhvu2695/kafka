@@ -1,7 +1,9 @@
 // consume message
 
 const Kafka = require("kafkajs").Kafka
-
+const getIpAdress = require("./host_ip.js");
+const ipAddress = getIpAdress();
+const brokerPort = "9092"
 
 run();
 
@@ -9,7 +11,7 @@ async function run(){
     try {
         const kafka = new Kafka({
             "clientId": "admin",
-            "brokers": ["192.168.50.42:9092"]
+            "brokers": [ipAddress.concat(":").concat(brokerPort)]
         })
         const consumer = kafka.consumer({"groupId": "test"});
         console.log("Connecting...")
