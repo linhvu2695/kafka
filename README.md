@@ -1,4 +1,4 @@
-# Kafka Tutorial
+ # Kafka Tutorial
 
 ## Set up Kafka with Docker
 Kafka distributed system is managed by Zookeeper. Therefore, it is necessary to run these 2 instances together.
